@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+				构造器 
+					var vm = new Vue({
+						// 选项
+					})
+				可扩展构造器
+					用预定义选项创建可复用的组件构造器
+					var MyComponent = Vue.extend({
+						// 扩展选项
+					})
+					// 所有的'MyComponent'实例都将以预定义的扩展选项被创建
+					var myComponentInstance = new MyComponent()
+			*/
+			/*
+				每个 Vue 实例都会代理其 data 对象里所有的属性：
+				var data = { a: 1 }
+				var vm = new Vue({
+					data: data
+				})
+				vm.a === data.a // -> true
+				//设置属性也会影响到原始数据
+				vm.a = 2
+				data.a // -> 2
+				//反之亦然
+				data.a = 3
+				vm.a // -> 3 
+				注意只有这些被代理的属性是响应的，也就是说值的任何改变都是触发视图的
+				重新渲染。如果在实例创建之后添加新的属性到实例上，它不会触发视图更新
+			*/
+		</script>
+	</body>
+</html>

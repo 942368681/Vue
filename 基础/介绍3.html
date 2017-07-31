@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--构建组件模版-->
+		<div id="app1">
+			<ol>
+				<!--使用 v-bind 指令将列表项传到每一个重复的组件中-->
+				<todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+				</todo-item>
+			</ol>
+		</div>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+				在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例 
+				在一个大型应用中，有必要将整个应用程序划分为组件，以使开发可管理
+				Vue 组件非常类似于自定义元素
+				Vue 组件提供了纯自定义元素所不具备的一些重要功能，
+				最突出的是跨组件数据流，自定义事件通信以及构建工具集成。
+			*/
+			//注册组件	定义名为 todo-item 的新组件
+			Vue.component('todo-item',{
+				/*todo-item 组件现在接受一个
+				"prop"，类似于一个自定义属性
+				这个属性名为 todo*/
+				props:['todo'],
+				template:'<li>{{todo.text}}</li>'
+			})
+			var app1=new Vue({
+				el:'#app1',
+				data:{
+					groceryList:[
+						{id: 0, text: '蔬菜'},
+						{id: 1, text: '奶酪'},
+						{id: 2, text: '香蕉'}
+					]
+				}
+			});
+			/*
+				流程
+					v-for拿到groceryList中的每一项(item)
+					v-bind:todo="item"
+					组件中props:['todo']，接收'todo'这个自定义属性
+					template:'<li>{{todo.text}}</li>'拿到每一项渲染页面
+			*/
+		</script>
+	</body>
+</html>

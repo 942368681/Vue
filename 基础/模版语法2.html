@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+				指令
+					指令（Directives）是带有 v- 前缀的特殊属性。
+					指令属性的值预期是单一 JavaScript 表达式（除了 v-for）。
+					指令的职责就是
+					当其表达式的值改变时相应地将某些行为应用到DOM上
+					
+					v-on 指令，它用于监听 DOM 事件
+					v-if 指令，用作判断，真就执行...
+					v-bind 指令，用来响应地更新HTML属性
+					
+					参数
+						一些指令能接受一个“参数”，在指令后以冒号指明。
+						例如， v-bind 指令被用来响应地更新 HTML 属性
+						<a v-bind:href="url"></a>
+						
+					修饰符
+						修饰符（Modifiers）是以半角句号 . 指明的特殊后缀，
+						用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符
+						告诉 v-on 指令对于触发的事件调用 event.preventDefault()
+						<form v-on:submit.prevent="onSubmit"></form>
+			*/
+		</script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app-2">
+			<span v-bind:title="message">
+				鼠标悬停几秒钟查看此处动态绑定的提示信息！
+			</span>
+		</div>
+		<div id="app-3">
+			<p v-if="seen">现在你看到我了</p>
+		</div>
+		<div id="app-4">
+		  <ol>
+		    <li v-for="a in todos">
+		      {{ a.text }}
+		    </li>
+		  </ol>
+		</div>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+				v-bind 属性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的
+				特殊属性。它们会在渲染的 DOM 上应用特殊的响应式行为。简言之，
+				这里该指令的作用是：“将这个元素节点的 title 属性和 Vue 实例的 
+				message 属性保持一致”。
+				v-for	指令可以绑定数组的数据来渲染一个项目列表
+				v-if	条件
+			*/
+			var app2=new Vue({
+				el:'#app-2',
+				data:{
+					message:'页面加载于'+new Date()
+				}
+			});
+			console.log(app2.message);
+			
+			var app3=new Vue({
+				el:'#app-3',
+				data:{
+					seen:true
+				}
+			});
+			
+			var app4=new Vue({
+				el:'#app-4',
+				data:{
+					todos:[
+						{ text: '学习 JavaScript' },
+					    { text: '学习 Vue' },
+					    { text: '整个牛项目' }
+					]
+				}
+			});
+			app4.todos.push({ text: '新的' })
+		</script>
+	</body>
+</html>
