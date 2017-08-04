@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<span v-for="n in 10">{{n}}</span>
+		</div>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+				整数迭代 
+			*/
+			var vm=new Vue({
+				el:'#box'
+			});
+		</script>
+	</body>
+</html>

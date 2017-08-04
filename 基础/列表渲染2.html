@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul">
+			<template v-for="item in items">
+		    	<li>{{ item.msg }}</li>
+		    	<li class="divider"></li>
+		  	</template>
+		</ul>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+				Template v-for 
+					如v-if模板，你也可以用带有 v-for 的 <template> 标签来渲染多个元素块
+			*/
+			var vm=new Vue({
+				el:'#ul',
+				data:{
+					items:[
+						{msg:'Foo'},
+						{msg:'Bar'}
+					]
+				}
+			});
+		</script>
+	</body>
+</html>

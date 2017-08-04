@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span v-for="item in items" :key="item.id">{{item.msg,item.id}}{{item.id}}</span>
+		</div>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+				key
+					用v-blind绑定动态id值，从而每一项都有一个唯一的id，
+					用以跟踪每个节点的身份，从而重用和重新排序现有元素
+			*/
+			var vm=new Vue({
+				el:'#box',
+				data:{
+					items:[
+						{id:1,msg:'aaa'},
+						{id:2,msg:'bbb'}
+					]
+				}
+			});
+		</script>
+	</body>
+</html>
