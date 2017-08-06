@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="example_3">
+		<button v-on:click="say('hi')">Say hi</button>
+		<button v-on:click="say('what')">Say what</button>
+		<button v-on:click="warn('Form cannot be submitted yet.','$event')">Warn</button>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		/*
+			除了直接绑定到一个方法，也可以用内联 JavaScript 语句
+			有时也需要在内联语句处理器中访问原生 DOM 事件。可以用特殊变量 $event 把它传入方法
+		*/
+		var vm=new Vue({
+			el:'#example_3',
+			methods:{
+				say:function (message){
+					alert(message);
+				},
+				warn:function (msg,event){
+					if (event) {
+						event.preventDefault();
+					}
+					alert(msg);
+				}
+			}
+		});
+	</script>
+</body>
+</html>

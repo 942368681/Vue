@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="example_1">
+		<button v-on:click="counter+=1">增加 1</button>
+		<p>这个按钮被点击了{{counter}}次。</p>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		/*
+			用 v-on 指令监听 DOM 事件来触发一些 JavaScript 代码
+		*/
+		var vm=new Vue({
+			el:'#example_1',
+			data:{
+				counter:0
+			}
+		});
+	</script>
+</body>
+</html>

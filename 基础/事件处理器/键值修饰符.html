@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 只有在 keyCode 是 13 时调用 vm.submit() -->
+	<input v-on:keyup.13="submit">
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		/*
+			在监听键盘事件时，我们经常需要监测常见的键值。 Vue 允许为 v-on 在监听键盘事件时添加关键修饰符
+
+			Vue 为最常用的按键提供了别名
+				<input v-on:keyup.enter="submit">
+				//简写:
+				<input @keyup.enter="submit">
+
+			全部的按键别名：
+				.enter
+				.tab
+				.delete (捕获 “删除” 和 “退格” 键)
+				.esc
+				.space
+				.up
+				.down
+				.left
+				.right
+
+			可以通过全局 config.keyCodes 对象自定义键值修饰符别名
+				//Vue.config.keyCodes.f1 = 112
+				现在可以使用 v-on:keyup.f1 了
+		*/		
+	</script>
+</body>
+</html>
