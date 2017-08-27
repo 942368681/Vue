@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+</head>
+
+<body>
+   <input type="text" id="txt"/>
+	<span id="span"></span>
+   <script type="text/javascript">
+      var a = {
+         _b: 0,
+         //如果只是读取，不设置，走get
+         get b() {
+            return this._b;
+         },
+         //如果设置了走set，再走get
+         set b(val) {
+            this._b = 10;
+         }
+      }
+      a.b = 2;
+      console.log(a.b); //10
+
+      //让console.log(d.e > 5 && d.e < 5);为true成立的方法
+      let c = 12;
+      let d = {
+         get e() {
+            c = c / 2;
+            return c;
+         }
+      }
+      console.log(d.e > 5 && d.e < 5);  //true
+
+      //Vue 数据双向绑定原理
+      var val = '';
+      var data = {
+         get val(){
+            return val;
+         },
+         set val(newVal){
+            val = newVal;
+         }
+      };
+      txt.oninput = function (){
+         data.val = this.value;
+         span.innerHTML = data.val;
+      };
+   </script>
+</body>
+
+</html>
